@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Wallet extends Model
 {
-    use HasFactory;
+    protected $table = 'wallets';
+
+    protected $hidden = ['created_at', 'user_id'];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

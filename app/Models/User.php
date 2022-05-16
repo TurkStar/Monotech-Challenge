@@ -12,6 +12,8 @@ class User extends Model
     use HasFactory;
 
     protected $table = 'users';
+
+    protected $hidden = ['pivot', 'created_at', 'updated_at'];
    
     protected $fillable = [
         'username',
@@ -24,5 +26,10 @@ class User extends Model
     public function promotions()
     {
         return $this->belongsToMany(Promotion::class, 'user_promotions');
+    }
+
+    public function wallet()
+    {
+        return $this->hasMany(Wallet::class);
     }
 }

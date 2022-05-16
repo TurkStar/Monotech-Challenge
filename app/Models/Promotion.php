@@ -11,6 +11,8 @@ class Promotion extends Model
 
     protected $table = 'promotions';
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     protected $fillable = [
         'code',
         'start_date',
@@ -19,7 +21,7 @@ class Promotion extends Model
         'quota'
     ];
 
-    public function user()
+    public function users()
     {
         return $this->belongsToMany(User::class, 'user_promotions');
     }

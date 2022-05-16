@@ -20,8 +20,9 @@ class UserSeeder extends Seeder
             'firstname' => 'Behzat',
             'lastname' => 'Cozer',
             'email' => 'behzat.php@gmail.com'
-        ],
-        [
+        ]);
+        
+        \App\Models\User::create([
             'username' => 'serkan123',
             'firstname' => 'Serkan',
             'lastname' => 'Akgül',
